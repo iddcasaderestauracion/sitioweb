@@ -1,14 +1,3 @@
 {
-  "eventos": [
-    {
-      "id": "dia-familiar-parque-2026-07-18",
-      "titulo": "Día Familiar en el Parque",
-      "fecha": "2026-07-18",
-      "fechaDisplay": "Sábado, 18 de julio de 2026",
-      "hora": "11:00 a.m.",
-      "lugar": "Parque [nombre del parque]",
-      "descripcion": "Un día de convivencia para toda la familia: juegos, comida y compañerismo al aire libre. ¡Todos son bienvenidos!",
-      "fotos": []
-    }
-  ]
+  "eventos": []
 }

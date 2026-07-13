@@ -28,7 +28,7 @@
 
 @media (min-width: 768px) {
   .mission__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -38,6 +38,9 @@
   border-radius: var(--radius-default);
   padding: var(--space-5);
   box-shadow: 0 8px 24px -16px rgba(31, 41, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .mission__eyebrow {
@@ -46,7 +49,7 @@
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--color-scarlet);
-  margin: 0 0 var(--space-3);
+  margin: 0;
 }
 
 .mission__text {
@@ -56,14 +59,31 @@
   margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   LEADERSHIP GRID
-   -------------------------------------------------------------------------- */
-.leadership {
-  padding-block: var(--space-8);
+.mission__citation {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-small);
+  font-style: italic;
+  color: var(--color-base-soft);
 }
 
-.leadership__title {
+/* --------------------------------------------------------------------------
+   BELIEFS — declaración de fe
+   -------------------------------------------------------------------------- */
+.beliefs {
+  padding-block: var(--space-8);
+  margin-inline: calc(-1 * var(--container-padding-mobile));
+  padding-inline: var(--container-padding-mobile);
+  background: var(--color-surface-warm);
+}
+
+@media (min-width: 768px) {
+  .beliefs {
+    margin-inline: calc(-1 * var(--container-padding-desktop));
+    padding-inline: var(--container-padding-desktop);
+  }
+}
+
+.beliefs__title {
   font-family: var(--font-display);
   font-size: var(--text-h2);
   font-weight: var(--font-weight-semibold);
@@ -72,56 +92,40 @@
   margin: 0 0 var(--space-5);
 }
 
-.leadership__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.beliefs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: var(--measure-max);
+  counter-reset: beliefs-counter;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
 }
 
-@media (min-width: 768px) {
-  .leadership__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.beliefs__list li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-base-soft);
+  counter-increment: beliefs-counter;
 }
 
-.leader-card {
-  text-align: center;
-}
-
-.leader-card__photo {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto var(--space-3);
+.beliefs__list li::before {
+  content: counter(beliefs-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--gradient-flame);
-  color: var(--color-on-ink);
+  color: var(--color-surface);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-small);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-h4);
-  /* Reemplazar por <img> real: mismo tamaño 96x96, object-fit: cover,
-     border-radius: 50%. Este círculo con iniciales es un marcador. */
-}
-
-.leader-card__name {
-  font-family: var(--font-display);
-  font-size: var(--text-h4);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-base);
-  margin: 0 0 var(--space-1);
-}
-
-.leader-card__role {
-  font-size: var(--text-small);
-  color: var(--color-base-soft);
-  margin: 0;
-}
-
-.leadership__note {
-  margin-top: var(--space-5);
-  font-size: var(--text-small);
-  color: var(--color-base-soft);
-  font-style: italic;
 }

@@ -1,0 +1,41 @@
+{
+  "servicios": [
+    {
+      "id": "martes-estudio-biblico",
+      "dia": "Martes",
+      "hora": "7:30 p.m.",
+      "tipo": "Estudio Bíblico",
+      "idioma": "Español",
+      "duracionAprox": "1 hora",
+      "descripcion": "Estudio profundo de la Palabra, con enseñanza y espacio para preguntas.",
+      "especial": false
+    },
+    {
+      "id": "jueves-servicio-alterno",
+      "dia": "Jueves",
+      "hora": "7:30 p.m.",
+      "tipo": "Servicio Alterno",
+      "idioma": "Español",
+      "duracionAprox": "1 hora 30 min",
+      "descripcion": "Un servicio de alabanza y predicación entre semana.",
+      "especial": false
+    },
+    {
+      "id": "domingo-evangelistico",
+      "dia": "Domingo",
+      "hora": "10:30 a.m.",
+      "tipo": "Servicio Evangelístico",
+      "idioma": "Español",
+      "duracionAprox": "1 hora 30 min",
+      "descripcion": "Nuestro servicio principal de alabanza, oración y predicación. Ideal para tu primera visita.",
+      "especial": false
+    }
+  ],
+  "proximoDestacado": "domingo-evangelistico",
+  "primeraVisita": [
+    "Llega 10 minutos antes para encontrar estacionamiento y ubicarte con calma.",
+    "El código de vestimenta es casual; ven como te sientas cómodo.",
+    "Hay un área de cuidado infantil disponible durante el servicio del domingo.",
+    "Al finalizar, el equipo de bienvenida estará disponible para resolver tus preguntas."
+  ]
+}

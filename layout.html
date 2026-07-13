@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa de Restauración — Iglesia De Dios</title>
+
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================
+       HEADER — sticky, navegación primaria de 4 ítems
+       ========================================================== -->
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Casa de Restauración — Inicio">
+        <img class="site-header__logo" src="assets/logo.svg" alt="Casa de Restauración — Iglesia De Dios">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav
+        class="site-nav"
+        id="primary-navigation"
+        aria-label="Navegación principal"
+        data-nav
+      >
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN — ancho máximo --container-max, padding lateral por token
+       ========================================================== -->
+  <main id="main-content" class="site-main">
+    <div class="container">
+      <!--
+        Contenido de cada página va aquí dentro.
+        Este layout es la envoltura compartida (Header + Footer);
+        no define contenido propio de sección.
+      -->
+    </div>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER — contacto, redes, horario resumido, copyright
+       ========================================================== -->
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Casa de Restauración</h2>
+        <p class="site-footer__text">Iglesia De Dios</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contacto</h3>
+        <ul class="site-footer__list">
+          <li>
+            <a href="tel:+10000000000">(000) 000-0000</a>
+          </li>
+          <li>
+            <a href="mailto:contacto@casaderestauracion.org">contacto@casaderestauracion.org</a>
+          </li>
+          <li>Dirección, Ciudad, Estado</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Horarios</h3>
+        <ul class="site-footer__list">
+          <li>Domingo — 10:00 a.m.</li>
+          <li>Miércoles — 7:00 p.m.</li>
+        </ul>
+        <a class="site-footer__link-inline" href="horarios.html">Ver todos los horarios</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Síguenos</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Facebook de Casa de Restauración">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram de Casa de Restauración">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube de Casa de Restauración">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Casa de Restauración · Iglesia De Dios. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videos — Casa de Restauración | Iglesia De Dios</title>
+
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="videos.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Casa de Restauración — Inicio">
+        <img class="site-header__logo" src="assets/logo.svg" alt="Casa de Restauración — Iglesia De Dios">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <div class="site-header__nav-group">
+        <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-nav>
+          <ul class="site-nav__list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="horarios.html">Horarios</a></li>
+            <li><a href="videos.html" aria-current="page">Videos</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a href="videos.html" aria-current="true" lang="es">ES</a>
+          <span class="lang-switch__divider" aria-hidden="true">/</span>
+          <a href="en/videos.html" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content" class="site-main">
+    <div class="container">
+
+      <div class="page-header" data-component="PageHeader">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Videos</span>
+        </nav>
+        <h1 class="page-header__title">Videos</h1>
+        <p class="page-header__lead">
+          Mira nuestros servicios y mensajes más recientes directamente
+          desde nuestro canal de YouTube.
+        </p>
+      </div>
+
+      <section class="videos-section" data-component="VideoEmbed" aria-labelledby="videos-heading">
+        <h2 id="videos-heading" class="visually-hidden">Últimos videos</h2>
+
+        <!--
+          CÓMO ACTIVAR EL CANAL REAL (pendiente):
+          1. Ve a la página del canal de YouTube en un navegador.
+          2. El Channel ID empieza con "UC..." (aparece en la URL o en
+             "Acerca de" > "Compartir canal" > "Copiar ID del canal").
+          3. Reemplaza "UC..." abajo por "UU..." (cambia solo las
+             primeras 2 letras) y pégalo en el src del iframe.
+          4. Borra el <div class="video-embed__placeholder">...</div>
+             de abajo — ya no hace falta.
+
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=UUxxxxxxxxxxxxxxxxxxxxxxxx"
+            title="Últimos videos de Casa de Restauración"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        -->
+        <div class="video-embed">
+          <div class="video-embed__placeholder">
+            <p class="video-embed__placeholder-title">Canal de YouTube pendiente de conectar</p>
+            <p class="video-embed__placeholder-text">
+              En cuanto tengamos el link o @usuario del canal, aquí se van
+              a mostrar automáticamente los videos más recientes.
+            </p>
+          </div>
+        </div>
+
+        <div class="videos-subscribe">
+          <!-- Reemplazar "#" por el link real del canal -->
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">
+            Suscríbete en YouTube
+          </a>
+        </div>
+      </section>
+
+      <section class="cta-band" data-component="CTABand" aria-labelledby="cta-band-heading">
+        <h2 id="cta-band-heading" class="cta-band__title">No te pierdas ningún mensaje</h2>
+        <p class="cta-band__text">Suscríbete a nuestro canal para recibir notificaciones de cada nuevo video.</p>
+        <a class="btn btn--primary" href="horarios.html">Ver horarios</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Casa de Restauración</h2>
+        <p class="site-footer__text">Iglesia De Dios</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contacto</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+12036844654">(203) 684-4654</a></li>
+          <li><a href="mailto:igldedioscasaderestauracion@gmail.com">igldedioscasaderestauracion@gmail.com</a></li>
+          <li>43 Prospect St, Bristol, CT 06010</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Horarios</h3>
+        <ul class="site-footer__list" data-footer-schedule></ul>
+        <a class="site-footer__link-inline" href="horarios.html">Ver todos los horarios</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Recursos</h3>
+        <ul class="site-footer__list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="https://www.bible.com/" target="_blank" rel="noopener">Leer la Biblia</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Síguenos</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Facebook de Casa de Restauración">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram de Casa de Restauración">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube de Casa de Restauración">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Casa de Restauración · Iglesia De Dios. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="layout.js"></script>
+  <script>
+    // Solo el resumen de horarios del footer (mismo patrón que las demás páginas).
+    fetch('data/horarios.json')
+      .then((r) => r.json())
+      .then((data) => {
+        const list = document.querySelector('[data-footer-schedule]');
+        if (!list) return;
+        data.servicios.forEach((s) => {
+          const li = document.createElement('li');
+          li.textContent = `${s.dia} — ${s.hora}`;
+          list.appendChild(li);
+        });
+      })
+      .catch((err) => console.error(err));
+  </script>
+</body>
+</html>

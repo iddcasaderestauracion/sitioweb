@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Casa de Restauración — Iglesia De Dios
+   tokens.css — Fuente única de verdad para color, tipografía y espaciado.
+   Ningún componente debe usar valores hardcodeados fuera de este archivo.
+   ========================================================================== */
+
+:root {
+
+  /* ------------------------------------------------------------------------
+     1. COLOR
+     Oro y rojo son acentos (~10% combinado), nunca fondos dominantes.
+     ------------------------------------------------------------------------ */
+
+  /* Acento primario — Oro Gloria */
+  --color-gold: #F59E0B;
+  --color-gold-hover: #D97706;
+
+  /* Acento secundario — Rojo Escarlata */
+  --color-scarlet: #DC2626;
+  --color-scarlet-hover: #B91C1C;
+
+  /* Neutros — Gris Base */
+  --color-base: #1F2937;
+  --color-base-soft: #4B5563;
+
+  /* Superficies */
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F9FAFB;
+
+  /* Foco / accesibilidad */
+  --color-focus: #F59E0B;
+
+  /* Estados de formulario */
+  --color-border-default: #D1D5DB;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+
+  /* Fondo base del sitio — crema cálido, no blanco puro.
+     Es lo que rompe la sensación de "plantilla" en todas las secciones,
+     no solo en el Hero. */
+  --color-cream: #F7F5F2;
+
+  /* Superficie de firma (reservada; ya no es el fondo del Hero) */
+  --color-ink: #14110F;
+  --color-ink-soft: #241E1A;
+  --color-on-ink: #FFFFFF;
+  --color-on-ink-soft: #C9C2BA;
+
+  /* Superficie cálida alterna — reemplaza el gris plano entre secciones */
+  --color-surface-warm: #FBF6EF;
+
+  /* Degradado de marca — la "llama" del logo, usado con moderación
+     en glows, divisores de sección y el botón primario. */
+  --gradient-flame: linear-gradient(135deg, var(--color-gold) 0%, var(--color-scarlet) 100%);
+  --gradient-flame-soft: linear-gradient(135deg, var(--color-gold-hover) 0%, var(--color-scarlet-hover) 100%);
+  --shadow-elevated: 0 20px 60px -20px rgba(220, 38, 38, 0.35);
+
+  /* ------------------------------------------------------------------------
+     2. TIPOGRAFÍA
+     Escala modular: base 16px, razón 1.25 (tercera mayor).
+     Tamaños en rem para respetar preferencias de zoom del usuario.
+     ------------------------------------------------------------------------ */
+
+  /* Familias (asignar la fuente real en el proyecto de fuentes) */
+  --font-display: 'Sans Display', system-ui, sans-serif;
+  --font-body: 'Sans Body', system-ui, sans-serif;
+
+  /* Tamaños — desktop */
+  --text-h1: 3.052rem;      /* ~49px */
+  --text-h2: 2.441rem;      /* ~39px */
+  --text-h3: 1.953rem;      /* ~31px */
+  --text-h4: 1.25rem;       /* ~20px */
+  --text-body-lg: 1.25rem;  /* ~20px */
+  --text-body: 1rem;        /* 16px  — piso mínimo, nunca baja de aquí */
+  --text-small: 0.875rem;   /* ~14px */
+  --text-eyebrow: 0.875rem; /* ~14px */
+
+  /* Tamaños — móvil (sobrescribir en breakpoint, ver ejemplo abajo) */
+  --text-h1-mobile: 2.441rem;
+  --text-h2-mobile: 1.953rem;
+  --text-h3-mobile: 1.563rem;
+  --text-h4-mobile: 1.125rem;
+  --text-body-lg-mobile: 1.125rem;
+  --text-eyebrow-mobile: 0.8125rem;
+
+  /* Pesos */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line-height */
+  --leading-h1: 1.1;
+  --leading-h2: 1.15;
+  --leading-h3: 1.2;
+  --leading-h4: 1.3;
+  --leading-body: 1.6;
+  --leading-body-lg: 1.55;
+  --leading-small: 1.5;
+  --leading-eyebrow: 1.2;
+
+  /* Letter-spacing */
+  --tracking-h1: -0.02em;
+  --tracking-h2: -0.01em;
+  --tracking-h3: 0em;
+  --tracking-body: 0em;
+  --tracking-small: 0.01em;
+  --tracking-eyebrow: 0.08em;
+
+  /* Ancho máximo de lectura */
+  --measure-max: 65ch;
+
+  /* ------------------------------------------------------------------------
+     3. ESPACIADO
+     Sistema en base 8px. Prohibido usar valores fuera de esta escala.
+     ------------------------------------------------------------------------ */
+
+  --space-1: 0.25rem;  /* 4px  — ajustes micro (icono ↔ texto) */
+  --space-2: 0.5rem;   /* 8px  — interior de badges, gaps mínimos */
+  --space-3: 1rem;     /* 16px — padding interno de botones e inputs */
+  --space-4: 1.5rem;   /* 24px — padding interno de tarjetas */
+  --space-5: 2rem;     /* 32px — separación entre bloques de una sección */
+  --space-6: 3rem;     /* 48px — margen entre subsecciones */
+  --space-7: 4rem;     /* 64px — padding vertical de sección (móvil) */
+  --space-8: 6rem;     /* 96px — padding vertical de sección (desktop) */
+  --space-9: 8rem;     /* 128px — separación hero / momentos de respiro */
+
+  /* ------------------------------------------------------------------------
+     4. LAYOUT
+     ------------------------------------------------------------------------ */
+
+  --container-max: 1200px;
+  --container-padding-mobile: var(--space-4);
+  --container-padding-desktop: var(--space-5);
+
+  /* ------------------------------------------------------------------------
+     5. INTERACCIÓN
+     ------------------------------------------------------------------------ */
+
+  --transition-interactive: all 150ms ease-out;
+  --radius-default: 8px;
+  --focus-ring: 3px solid var(--color-focus);
+  --focus-ring-offset: 2px;
+  --tap-target-min: 44px;
+}
+
+/* ==========================================================================
+   Ajuste responsivo de escala tipográfica.
+   Ejemplo de aplicación — el componente consume --text-h1, etc.,
+   y este breakpoint reasigna el valor mobile al token base.
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --text-h1: var(--text-h1-mobile);
+    --text-h2: var(--text-h2-mobile);
+    --text-h3: var(--text-h3-mobile);
+    --text-h4: var(--text-h4-mobile);
+    --text-body-lg: var(--text-body-lg-mobile);
+    --text-eyebrow: var(--text-eyebrow-mobile);
+  }
+}
+
+/* ==========================================================================
+   Accesibilidad — respeta la preferencia de movimiento reducido.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-interactive: none;
+  }
+}

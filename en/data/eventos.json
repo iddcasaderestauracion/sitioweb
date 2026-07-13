@@ -1,0 +1,14 @@
+{
+  "eventos": [
+    {
+      "id": "dia-familiar-parque-2026-07-18",
+      "titulo": "Family Day at the Park",
+      "fecha": "2026-07-18",
+      "fechaDisplay": "Saturday, July 18, 2026",
+      "hora": "11:00 AM",
+      "lugar": "[Park name]",
+      "descripcion": "A day of fellowship for the whole family: games, food, and community outdoors. Everyone is welcome!",
+      "fotos": []
+    }
+  ]
+}

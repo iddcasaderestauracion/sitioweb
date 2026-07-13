@@ -1,0 +1,199 @@
+/* ==========================================================================
+   horarios.css — Estilos específicos de /horarios.
+   Header/Footer viven en layout.css. Todo valor proviene de tokens.css.
+   ========================================================================== */
+
+/* Nota: .breadcrumb y .page-header ahora viven en layout.css
+   (componentes compartidos por todas las páginas internas). */
+
+/* --------------------------------------------------------------------------
+   SCHEDULE TABLE
+   -------------------------------------------------------------------------- */
+.schedule-section {
+  padding-block: var(--space-7);
+  position: relative;
+}
+.schedule-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-flame);
+  opacity: 0.6;
+}
+.schedule-section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-h2);
+  color: var(--color-base);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.schedule-table-wrapper {
+  min-height: 4rem;
+}
+
+.schedule-table__loading {
+  color: var(--color-base-soft);
+  font-size: var(--text-small);
+  margin: 0;
+}
+
+.schedule-table__error {
+  color: var(--color-error);
+  font-size: var(--text-small);
+  margin: 0;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+.schedule-table caption {
+  text-align: left;
+  font-size: var(--text-small);
+  color: var(--color-base-soft);
+  margin-bottom: var(--space-3);
+}
+
+.schedule-table thead th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-surface);
+  background: var(--color-base);
+  padding: var(--space-3) var(--space-4);
+}
+
+.schedule-table thead th:first-child {
+  border-top-left-radius: var(--radius-default);
+}
+.schedule-table thead th:last-child {
+  border-top-right-radius: var(--radius-default);
+}
+
+.schedule-table tbody tr {
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background: var(--color-surface-alt);
+}
+
+.schedule-table tbody td {
+  padding: var(--space-4);
+  font-size: var(--text-body);
+  color: var(--color-base);
+  vertical-align: top;
+}
+
+.schedule-table__day-cell {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Badge para servicios especiales — usa rojo con significado, no decoración */
+.schedule-table__badge {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 2px var(--space-2);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-surface);
+  background: var(--color-scarlet);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* Responsive: por debajo de 640px la tabla se convierte en tarjetas apiladas.
+   Cada <td> usa data-label (inyectado por horarios.js) como su etiqueta. */
+@media (max-width: 640px) {
+  .schedule-table thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .schedule-table,
+  .schedule-table tbody,
+  .schedule-table tr,
+  .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table tbody tr {
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-default);
+    overflow: hidden;
+  }
+
+  .schedule-table tbody tr:nth-child(even) {
+    background: var(--color-surface);
+  }
+
+  .schedule-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--color-border-default);
+  }
+
+  .schedule-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .schedule-table tbody td::before {
+    content: attr(data-label);
+    font-size: var(--text-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-base-soft);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    flex-shrink: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   WHAT TO EXPECT
+   -------------------------------------------------------------------------- */
+.what-to-expect {
+  padding-block: var(--space-8);
+  margin-inline: calc(-1 * var(--container-padding-mobile));
+  padding-inline: var(--container-padding-mobile);
+  background: var(--color-surface-warm);
+}
+
+@media (min-width: 768px) {
+  .what-to-expect {
+    margin-inline: calc(-1 * var(--container-padding-desktop));
+    padding-inline: var(--container-padding-desktop);
+  }
+}
+
+.what-to-expect__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-h2);
+  color: var(--color-base);
+  margin: 0 0 var(--space-5);
+}
+
+.what-to-expect__text {
+  margin: 0;
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-base-soft);
+  max-width: var(--measure-max);
+}
+
+/* Nota: .cta-band ahora vive en layout.css (componente compartido). */

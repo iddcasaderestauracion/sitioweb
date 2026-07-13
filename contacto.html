@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Casa de Restauración | Iglesia De Dios</title>
+
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================
+       HEADER — "Contacto" es la página activa
+       ========================================================== -->
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Casa de Restauración — Inicio">
+        <img class="site-header__logo" src="assets/logo.svg" alt="Casa de Restauración — Iglesia De Dios">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <div class="site-header__nav-group">
+        <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-nav>
+          <ul class="site-nav__list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="horarios.html">Horarios</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a href="contacto.html" aria-current="true" lang="es">ES</a>
+          <span class="lang-switch__divider" aria-hidden="true">/</span>
+          <a href="en/contact.html" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN — contenido específico de /contacto
+       ========================================================== -->
+  <main id="main-content" class="site-main">
+    <div class="container">
+
+      <!-- ======================================================
+           PAGE HEADER
+           ====================================================== -->
+      <div class="page-header" data-component="PageHeader">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contacto</span>
+        </nav>
+        <h1 class="page-header__title">Contáctanos</h1>
+        <p class="page-header__lead">
+          Escríbenos, llámanos o visítanos. Con gusto te ayudamos a resolver
+          cualquier pregunta antes de tu visita.
+        </p>
+      </div>
+
+      <!-- ======================================================
+           CONTACT LAYOUT — info + formulario en dos columnas
+           ====================================================== -->
+      <section class="contact-layout" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="visually-hidden">Información de contacto y formulario</h2>
+
+        <!-- ContactInfo + ServiceHoursSummary -->
+        <div class="contact-info" data-component="ContactInfo">
+          <div class="contact-info__block">
+            <p class="contact-info__label">Dirección</p>
+            <p class="contact-info__value">43 Prospect St, Bristol, CT 06010</p>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Teléfono</p>
+            <a class="contact-info__value contact-info__link" href="tel:+12036844654">(203) 684-4654</a>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Correo</p>
+            <a class="contact-info__value contact-info__link" href="mailto:igldedioscasaderestauracion@gmail.com">
+              igldedioscasaderestauracion@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-info__block" data-component="ServiceHoursSummary">
+            <p class="contact-info__label">Horarios</p>
+            <ul class="contact-info__schedule" data-contact-schedule>
+              <li class="contact-info__loading" data-contact-schedule-loading>Cargando horarios…</li>
+            </ul>
+            <a class="contact-info__link-inline" href="horarios.html">Ver todos los horarios</a>
+          </div>
+
+          <!-- MapEmbed — reemplazar por el iframe real de Google Maps
+               con la dirección definitiva de la congregación. -->
+          <div class="contact-info__map" data-component="MapEmbed">
+            <iframe
+              src="https://www.google.com/maps?q=43+Prospect+St,+Bristol,+CT+06010&output=embed"
+              title="Ubicación de Casa de Restauración"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- ContactForm -->
+        <form
+          class="contact-form"
+          data-component="ContactForm"
+          novalidate
+          data-contact-form
+        >
+          <p class="contact-form__title">Envíanos un mensaje</p>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-name">Nombre</label>
+            <input
+              class="form-field__input"
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+              required
+              aria-describedby="contact-name-error"
+            >
+            <p class="form-field__error" id="contact-name-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-email">Correo electrónico</label>
+            <input
+              class="form-field__input"
+              type="email"
+              id="contact-email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="contact-email-error"
+            >
+            <p class="form-field__error" id="contact-email-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-message">Mensaje</label>
+            <textarea
+              class="form-field__input form-field__input--textarea"
+              id="contact-message"
+              name="message"
+              rows="5"
+              required
+              aria-describedby="contact-message-error"
+            ></textarea>
+            <p class="form-field__error" id="contact-message-error" role="alert"></p>
+          </div>
+
+          <button class="btn btn--primary contact-form__submit" type="submit">
+            Enviar mensaje
+          </button>
+
+          <div class="contact-form__status" data-contact-form-status role="status" aria-live="polite"></div>
+        </form>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Casa de Restauración</h2>
+        <p class="site-footer__text">Iglesia De Dios</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contacto</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+12036844654">(203) 684-4654</a></li>
+          <li><a href="mailto:igldedioscasaderestauracion@gmail.com">igldedioscasaderestauracion@gmail.com</a></li>
+          <li>43 Prospect St, Bristol, CT 06010</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Horarios</h3>
+        <ul class="site-footer__list" data-footer-schedule>
+          <!-- Poblado por contacto.js desde data/horarios.json -->
+        </ul>
+        <a class="site-footer__link-inline" href="horarios.html">Ver todos los horarios</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Recursos</h3>
+        <ul class="site-footer__list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="https://www.bible.com/" target="_blank" rel="noopener">Leer la Biblia</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Síguenos</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Facebook de Casa de Restauración">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram de Casa de Restauración">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube de Casa de Restauración">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Casa de Restauración · Iglesia De Dios. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="layout.js"></script>
+  <script src="contacto.js"></script>
+</body>
+</html>

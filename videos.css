@@ -1,0 +1,75 @@
+/* ==========================================================================
+   videos.css — Estilos específicos de /videos y /en/videos.
+   Header/Footer/PageHeader viven en layout.css.
+   ========================================================================== */
+
+.videos-section {
+  padding-block: var(--space-7);
+  position: relative;
+}
+.videos-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-flame);
+  opacity: 0.6;
+}
+
+/* Contenedor responsive 16:9 para el iframe de YouTube.
+   Cuando actives el embed real, el <iframe> debe llevar esta clase
+   en un padre con esta clase envolvente: ver comentario en el HTML. */
+.video-embed {
+  margin-top: var(--space-5);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  background: var(--color-base);
+  box-shadow: 0 8px 24px -16px rgba(31, 41, 55, 0.2);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Placeholder que se muestra mientras no haya un canal configurado */
+.video-embed__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-on-ink-soft);
+}
+
+.video-embed__placeholder-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-on-ink);
+  margin: 0;
+}
+
+.video-embed__placeholder-text {
+  font-size: var(--text-small);
+  max-width: 40ch;
+  margin: 0;
+}
+
+.videos-subscribe {
+  margin-top: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}

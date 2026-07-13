@@ -1,0 +1,114 @@
+/* ==========================================================================
+   eventos.css — Estilos específicos de /eventos y /en/events.
+   Header/Footer/PageHeader viven en layout.css.
+   ========================================================================== */
+
+.events-section {
+  padding-block: var(--space-7);
+  position: relative;
+}
+.events-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-flame);
+  opacity: 0.6;
+}
+
+.events-list {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.events-empty {
+  color: var(--color-base-soft);
+  font-size: var(--text-body);
+}
+
+.event-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  padding: var(--space-5);
+  box-shadow: 0 8px 24px -16px rgba(31, 41, 55, 0.15);
+}
+
+.event-card__date {
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-scarlet);
+  margin: 0 0 var(--space-2);
+}
+
+.event-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-base);
+  margin: 0 0 var(--space-1);
+}
+
+.event-card__meta {
+  font-size: var(--text-small);
+  color: var(--color-base-soft);
+  margin: 0 0 var(--space-4);
+}
+
+.event-card__description {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-base-soft);
+  max-width: var(--measure-max);
+  margin: 0 0 var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   GALERÍA DE FOTOS
+   -------------------------------------------------------------------------- */
+.event-card__photos-empty {
+  font-size: var(--text-small);
+  color: var(--color-base-soft);
+  font-style: italic;
+  margin: 0;
+}
+
+.event-card__photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .event-card__photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.event-card__photo {
+  display: block;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  transition: var(--transition-interactive);
+}
+
+.event-card__photo:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-elevated);
+}
+
+.event-card__photo:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.event-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

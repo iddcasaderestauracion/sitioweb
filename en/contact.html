@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Restoration House | Church of God</title>
+
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../layout.css">
+<link rel="stylesheet" href="../contacto.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Restoration House — Home">
+        <img class="site-header__logo" src="../assets/logo.svg" alt="Restoration House — Church of God">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <div class="site-header__nav-group">
+        <nav class="site-nav" id="primary-navigation" aria-label="Main navigation" data-nav>
+          <ul class="site-nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switch" aria-label="Language selector">
+          <a href="../contacto.html" lang="es" hreflang="es">ES</a>
+          <span class="lang-switch__divider" aria-hidden="true">/</span>
+          <a href="contact.html" aria-current="true" lang="en">EN</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content" class="site-main">
+    <div class="container">
+
+      <div class="page-header" data-component="PageHeader">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="page-header__title">Contact us</h1>
+        <p class="page-header__lead">
+          Write to us, call us, or visit us. We're happy to answer any
+          questions before your visit.
+        </p>
+      </div>
+
+      <section class="contact-layout" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="visually-hidden">Contact information and form</h2>
+
+        <div class="contact-info" data-component="ContactInfo">
+          <div class="contact-info__block">
+            <p class="contact-info__label">Address</p>
+            <p class="contact-info__value">43 Prospect St, Bristol, CT 06010</p>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Phone</p>
+            <a class="contact-info__value contact-info__link" href="tel:+12036844654">(203) 684-4654</a>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Email</p>
+            <a class="contact-info__value contact-info__link" href="mailto:igldedioscasaderestauracion@gmail.com">
+              igldedioscasaderestauracion@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-info__block" data-component="ServiceHoursSummary">
+            <p class="contact-info__label">Schedule</p>
+            <ul class="contact-info__schedule" data-contact-schedule>
+              <li class="contact-info__loading" data-contact-schedule-loading>Loading schedule…</li>
+            </ul>
+            <a class="contact-info__link-inline" href="schedule.html">See full schedule</a>
+          </div>
+
+          <div class="contact-info__map" data-component="MapEmbed">
+            <iframe
+              src="https://www.google.com/maps?q=43+Prospect+St,+Bristol,+CT+06010&output=embed"
+              title="Restoration House location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          data-component="ContactForm"
+          novalidate
+          data-contact-form
+        >
+          <p class="contact-form__title">Send us a message</p>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-name">Name</label>
+            <input
+              class="form-field__input"
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+              required
+              aria-describedby="contact-name-error"
+            >
+            <p class="form-field__error" id="contact-name-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-email">Email</label>
+            <input
+              class="form-field__input"
+              type="email"
+              id="contact-email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="contact-email-error"
+            >
+            <p class="form-field__error" id="contact-email-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="contact-message">Message</label>
+            <textarea
+              class="form-field__input form-field__input--textarea"
+              id="contact-message"
+              name="message"
+              rows="5"
+              required
+              aria-describedby="contact-message-error"
+            ></textarea>
+            <p class="form-field__error" id="contact-message-error" role="alert"></p>
+          </div>
+
+          <button class="btn btn--primary contact-form__submit" type="submit">
+            Send message
+          </button>
+
+          <div class="contact-form__status" data-contact-form-status role="status" aria-live="polite"></div>
+        </form>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Restoration House</h2>
+        <p class="site-footer__text">Church of God</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+12036844654">(203) 684-4654</a></li>
+          <li><a href="mailto:igldedioscasaderestauracion@gmail.com">igldedioscasaderestauracion@gmail.com</a></li>
+          <li>43 Prospect St, Bristol, CT 06010</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Schedule</h3>
+        <ul class="site-footer__list" data-footer-schedule></ul>
+        <a class="site-footer__link-inline" href="schedule.html">See full schedule</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Resources</h3>
+        <ul class="site-footer__list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="https://www.bible.com/" target="_blank" rel="noopener">Read the Bible</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Follow us</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Restoration House on Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Restoration House on Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Restoration House on YouTube">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Restoration House · Church of God. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../layout.js"></script>
+  <script src="../contacto.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* ==========================================================================
+   nosotros.css — Estilos específicos de /nosotros.
+   Header/Footer/PageHeader/CTABand viven en layout.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   MISSION BLOCK
+   -------------------------------------------------------------------------- */
+.mission {
+  padding-block: var(--space-7);
+  position: relative;
+}
+.mission::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-flame);
+  opacity: 0.6;
+}
+
+.mission__grid {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .mission__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mission__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  padding: var(--space-5);
+  box-shadow: 0 8px 24px -16px rgba(31, 41, 55, 0.15);
+}
+
+.mission__eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-scarlet);
+  margin: 0 0 var(--space-3);
+}
+
+.mission__text {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-base-soft);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   LEADERSHIP GRID
+   -------------------------------------------------------------------------- */
+.leadership {
+  padding-block: var(--space-8);
+}
+
+.leadership__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-h2);
+  color: var(--color-base);
+  margin: 0 0 var(--space-5);
+}
+
+.leadership__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .leadership__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.leader-card {
+  text-align: center;
+}
+
+.leader-card__photo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto var(--space-3);
+  border-radius: 50%;
+  background: var(--gradient-flame);
+  color: var(--color-on-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-h4);
+  /* Reemplazar por <img> real: mismo tamaño 96x96, object-fit: cover,
+     border-radius: 50%. Este círculo con iniciales es un marcador. */
+}
+
+.leader-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-base);
+  margin: 0 0 var(--space-1);
+}
+
+.leader-card__role {
+  font-size: var(--text-small);
+  color: var(--color-base-soft);
+  margin: 0;
+}
+
+.leadership__note {
+  margin-top: var(--space-5);
+  font-size: var(--text-small);
+  color: var(--color-base-soft);
+  font-style: italic;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horarios — Casa de Restauración | Iglesia De Dios</title>
+
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="horarios.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================
+       HEADER (idéntico a layout.html — "Horarios" es la página activa)
+       ========================================================== -->
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Casa de Restauración — Inicio">
+        <img class="site-header__logo" src="assets/logo.svg" alt="Casa de Restauración — Iglesia De Dios">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <div class="site-header__nav-group">
+        <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-nav>
+          <ul class="site-nav__list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="horarios.html" aria-current="page">Horarios</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a href="horarios.html" aria-current="true" lang="es">ES</a>
+          <span class="lang-switch__divider" aria-hidden="true">/</span>
+          <a href="en/schedule.html" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN — contenido específico de /horarios
+       ========================================================== -->
+  <main id="main-content" class="site-main">
+    <div class="container">
+
+      <!-- ======================================================
+           PAGE HEADER — patrón compartido de páginas internas
+           ====================================================== -->
+      <div class="page-header" data-component="PageHeader">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Horarios</span>
+        </nav>
+        <h1 class="page-header__title">Horarios de servicio</h1>
+        <p class="page-header__lead">
+          Estas son nuestras reuniones regulares. Todos son bienvenidos,
+          sin importar si es tu primera visita.
+        </p>
+      </div>
+
+      <!-- ======================================================
+           SCHEDULE TABLE
+           Poblada íntegramente desde /data/horarios.json vía horarios.js.
+           ====================================================== -->
+      <section class="schedule-section" data-component="ScheduleTable" aria-labelledby="schedule-heading">
+        <h2 id="schedule-heading" class="schedule-section__title">
+          Servicios regulares
+        </h2>
+
+        <div class="schedule-table-wrapper" data-schedule-status aria-live="polite">
+          <p class="schedule-table__loading" data-schedule-loading>Cargando horarios…</p>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           WHAT TO EXPECT — Información adicional para primera visita
+           ====================================================== -->
+      <section class="what-to-expect" data-component="WhatToExpect" aria-labelledby="what-to-expect-heading">
+        <h2 id="what-to-expect-heading" class="what-to-expect__title">
+          Ven tal como eres
+        </h2>
+        <p class="what-to-expect__text">
+          No necesitas prepararte de ninguna manera especial. Aquí vas a
+          encontrar una familia dispuesta a recibirte con amor, sin importar
+          de dónde vengas o en qué etapa de tu vida te encuentres. Nuestra
+          puerta, y nuestros corazones, están abiertos para ti.
+        </p>
+      </section>
+
+      <!-- ======================================================
+           CTA BAND — cierre estándar de páginas internas
+           ====================================================== -->
+      <section class="cta-band" data-component="CTABand" aria-labelledby="cta-band-heading">
+        <h2 id="cta-band-heading" class="cta-band__title">¿Tienes preguntas?</h2>
+        <p class="cta-band__text">Escríbenos y con gusto te orientamos antes de tu visita.</p>
+        <a class="btn btn--primary" href="contacto.html">Contáctanos</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER (idéntico a layout.html)
+       ========================================================== -->
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Casa de Restauración</h2>
+        <p class="site-footer__text">Iglesia De Dios</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contacto</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+12036844654">(203) 684-4654</a></li>
+          <li><a href="mailto:igldedioscasaderestauracion@gmail.com">igldedioscasaderestauracion@gmail.com</a></li>
+          <li>43 Prospect St, Bristol, CT 06010</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Horarios</h3>
+        <ul class="site-footer__list" data-footer-schedule>
+          <!-- Poblado por horarios.js desde data/horarios.json -->
+        </ul>
+        <a class="site-footer__link-inline" href="horarios.html">Ver todos los horarios</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Recursos</h3>
+        <ul class="site-footer__list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="https://www.bible.com/" target="_blank" rel="noopener">Leer la Biblia</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Síguenos</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Facebook de Casa de Restauración">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram de Casa de Restauración">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube de Casa de Restauración">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Casa de Restauración · Iglesia De Dios. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="layout.js"></script>
+  <script src="horarios.js"></script>
+</body>
+</html>

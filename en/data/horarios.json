@@ -1,0 +1,41 @@
+{
+  "servicios": [
+    {
+      "id": "martes-estudio-biblico",
+      "dia": "Tuesday",
+      "hora": "7:30 PM",
+      "tipo": "Bible Study",
+      "idioma": "English",
+      "duracionAprox": "1 hour",
+      "descripcion": "An in-depth study of the Word, with teaching and time for questions.",
+      "especial": false
+    },
+    {
+      "id": "jueves-servicio-alterno",
+      "dia": "Thursday",
+      "hora": "7:30 PM",
+      "tipo": "Alternate Service",
+      "idioma": "English",
+      "duracionAprox": "1 hour 30 min",
+      "descripcion": "A midweek service of worship and preaching.",
+      "especial": false
+    },
+    {
+      "id": "domingo-evangelistico",
+      "dia": "Sunday",
+      "hora": "10:30 AM",
+      "tipo": "Evangelistic Service",
+      "idioma": "English",
+      "duracionAprox": "1 hour 30 min",
+      "descripcion": "Our main service of worship, prayer, and preaching. Great for your first visit.",
+      "especial": false
+    }
+  ],
+  "proximoDestacado": "domingo-evangelistico",
+  "primeraVisita": [
+    "Arrive 10 minutes early to find parking and settle in.",
+    "Dress code is casual; come as you feel comfortable.",
+    "Children's care is available during the Sunday service.",
+    "After the service, our welcome team is available to answer any questions."
+  ]
+}

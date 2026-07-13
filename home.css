@@ -1,0 +1,264 @@
+/* ==========================================================================
+   home.css — Estilos específicos de la página Home.
+   Header/Footer viven en layout.css; este archivo solo cubre
+   Hero, ServiceHighlight y AboutTeaser.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO
+   Fondo crema con dos resplandores suaves (oro y escarlata) posicionados
+   arriba, que se desvanecen hacia el mismo crema del resto del sitio.
+   Esta transición de color es la firma visual de la página.
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  margin-inline: calc(-1 * var(--container-padding-mobile));
+  padding: var(--space-9) var(--container-padding-mobile) var(--space-8);
+  background:
+    radial-gradient(1100px 600px at 15% -10%, rgba(245, 158, 11, 0.22), transparent 55%),
+    radial-gradient(900px 550px at 90% 0%, rgba(220, 38, 38, 0.16), transparent 50%),
+    var(--color-cream);
+  color: var(--color-base);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    margin-inline: calc(-1 * var(--container-padding-desktop));
+    padding-inline: var(--container-padding-desktop);
+  }
+}
+
+/* Capa de fotografía: muy desenfocada y tenue, en escala de grises,
+   mezclada por "multiply" para que se funda con el crema en vez de
+   verse como una foto pegada encima. */
+.hero__photo {
+  position: absolute;
+  inset: -20px;
+  background: url('assets/hero-bg.jpg') center 30% / cover no-repeat;
+  filter: blur(16px) grayscale(1) contrast(1.05);
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.hero__eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-scarlet);
+  margin: 0 0 var(--space-3);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
+  text-transform: uppercase;
+  color: var(--color-base);
+  margin: 0 0 var(--space-4);
+}
+
+.hero__lead {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-base-soft);
+  max-width: var(--measure-max);
+  margin: 0 0 var(--space-6);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero__resource {
+  margin: var(--space-4) 0 0;
+}
+
+.hero__resource a {
+  color: var(--color-base-soft);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  transition: var(--transition-interactive);
+}
+.hero__resource a:hover {
+  color: var(--color-scarlet);
+}
+.hero__resource a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Los estilos de .btn (componente compartido) ahora viven en layout.css,
+   ya que se usan tanto en el Home como en el CTABand de páginas internas. */
+
+/* --------------------------------------------------------------------------
+   SERVICE HIGHLIGHT
+   -------------------------------------------------------------------------- */
+.service-highlight {
+  padding-block: var(--space-7);
+  position: relative;
+}
+
+/* Divisor de firma — reemplaza el hairline gris genérico */
+.service-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-flame);
+  opacity: 0.6;
+}
+
+.service-highlight__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-h3);
+  color: var(--color-base);
+  margin: var(--space-4) 0 var(--space-4);
+}
+
+.service-highlight__card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  padding: var(--space-5) var(--space-5) var(--space-5) calc(var(--space-5) + var(--space-1));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-shadow: 0 8px 24px -12px rgba(31, 41, 55, 0.15);
+  overflow: hidden;
+}
+
+.service-highlight__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-flame);
+}
+
+.service-highlight__loading {
+  margin: 0;
+  color: var(--color-base-soft);
+  font-size: var(--text-small);
+}
+
+.service-highlight__day {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-base);
+  margin: 0;
+}
+
+.service-highlight__meta {
+  font-size: var(--text-body);
+  color: var(--color-base-soft);
+  margin: 0;
+}
+
+.service-highlight__link {
+  align-self: flex-start;
+  margin-top: var(--space-2);
+  color: var(--color-scarlet);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  transition: var(--transition-interactive);
+}
+.service-highlight__link:hover {
+  color: var(--color-scarlet-hover);
+}
+.service-highlight__link:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Estado de error — mismo componente, distinto contenido inyectado por home.js */
+.service-highlight__error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: var(--text-small);
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT TEASER
+   -------------------------------------------------------------------------- */
+.about-teaser {
+  padding-block: var(--space-8);
+  margin-inline: calc(-1 * var(--container-padding-mobile));
+  padding-inline: var(--container-padding-mobile);
+  background: var(--color-surface-warm);
+}
+
+@media (min-width: 768px) {
+  .about-teaser {
+    margin-inline: calc(-1 * var(--container-padding-desktop));
+    padding-inline: var(--container-padding-desktop);
+  }
+}
+
+.about-teaser__content {
+  max-width: var(--measure-max);
+  margin-inline: auto;
+}
+
+.about-teaser__eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-gold-hover);
+  margin: 0 0 var(--space-2);
+}
+
+.about-teaser__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  color: var(--color-base);
+  margin: 0 0 var(--space-4);
+}
+
+.about-teaser__text {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-base-soft);
+  margin: 0 0 var(--space-4);
+}
+
+.about-teaser__link {
+  color: var(--color-scarlet);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  transition: var(--transition-interactive);
+}
+.about-teaser__link:hover {
+  color: var(--color-scarlet-hover);
+}
+.about-teaser__link:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

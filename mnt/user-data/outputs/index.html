@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa de Restauración — Iglesia De Dios</title>
+
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================
+       HEADER (idéntico a layout.html — compartido en todo el sitio)
+       ========================================================== -->
+  <header class="site-header" data-component="Header">
+    <div class="site-header__inner">
+
+      <a class="site-header__brand" href="index.html" aria-label="Casa de Restauración — Inicio">
+        <img class="site-header__logo" src="assets/logo.svg" alt="Casa de Restauración — Iglesia De Dios">
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-nav-toggle
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <div class="site-header__nav-group">
+        <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal" data-nav>
+          <ul class="site-nav__list">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="horarios.html">Horarios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a href="index.html" aria-current="true" lang="es">ES</a>
+          <span class="lang-switch__divider" aria-hidden="true">/</span>
+          <a href="en/index.html" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN — contenido específico del Home
+       ========================================================== -->
+  <main id="main-content" class="site-main">
+    <div class="container">
+
+      <!-- ======================================================
+           HERO
+           ====================================================== -->
+      <section class="hero" data-component="Hero" aria-labelledby="hero-heading">
+        <div class="hero__photo" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="hero__eyebrow">Iglesia De Dios</p>
+          <h1 id="hero-heading" class="hero__title">
+            Un hogar para tu restauración
+          </h1>
+          <p class="hero__lead">
+            Una comunidad de fe donde encontrarás propósito, familia y un lugar
+            para crecer espiritualmente.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#service-highlight">
+              Visítanos este domingo
+            </a>
+            <a class="btn btn--secondary" href="nosotros.html">
+              Conócenos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           SERVICE HIGHLIGHT
+           Contenido poblado desde /data/horarios.json vía home.js.
+           El <template> define el marcado; no hay datos fijos aquí.
+           ====================================================== -->
+      <section
+        class="service-highlight"
+        id="service-highlight"
+        data-component="ServiceHighlight"
+        aria-labelledby="service-highlight-heading"
+      >
+        <h2 id="service-highlight-heading" class="service-highlight__title">
+          Próximo servicio
+        </h2>
+
+        <div
+          class="service-highlight__card"
+          data-service-highlight
+          aria-live="polite"
+        >
+          <p class="service-highlight__loading" data-service-loading>
+            Cargando horario…
+          </p>
+        </div>
+
+        <template id="service-highlight-template">
+          <p class="service-highlight__day"></p>
+          <p class="service-highlight__meta"></p>
+          <a class="service-highlight__link" href="horarios.html">Ver todos los horarios</a>
+        </template>
+      </section>
+
+      <!-- ======================================================
+           ABOUT TEASER
+           ====================================================== -->
+      <section class="about-teaser" data-component="AboutTeaser" aria-labelledby="about-teaser-heading">
+        <div class="about-teaser__content">
+          <p class="about-teaser__eyebrow">Nosotros</p>
+          <h2 id="about-teaser-heading" class="about-teaser__title">
+            Más que una iglesia, una familia
+          </h2>
+          <p class="about-teaser__text">
+            Creemos en un evangelio que transforma vidas y restaura hogares.
+            Conoce nuestra historia, nuestra visión y a quienes lideran esta
+            congregación.
+          </p>
+          <a class="about-teaser__link" href="nosotros.html">
+            Conoce nuestra historia
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER (idéntico a layout.html)
+       ========================================================== -->
+  <footer class="site-footer" data-component="Footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__block">
+        <h2 class="site-footer__heading">Casa de Restauración</h2>
+        <p class="site-footer__text">Iglesia De Dios</p>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Contacto</h3>
+        <ul class="site-footer__list">
+          <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+          <li><a href="mailto:contacto@casaderestauracion.org">contacto@casaderestauracion.org</a></li>
+          <li>Dirección, Ciudad, Estado</li>
+        </ul>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Horarios</h3>
+        <ul class="site-footer__list" data-footer-schedule>
+          <!-- Poblado por home.js / layout.js compartido desde data/horarios.json -->
+        </ul>
+        <a class="site-footer__link-inline" href="horarios.html">Ver todos los horarios</a>
+      </div>
+
+      <div class="site-footer__block">
+        <h3 class="site-footer__heading site-footer__heading--small">Síguenos</h3>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Facebook de Casa de Restauración">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram de Casa de Restauración">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube de Casa de Restauración">YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container">
+        <p>&copy; <span data-current-year>2026</span> Casa de Restauración · Iglesia De Dios. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="layout.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

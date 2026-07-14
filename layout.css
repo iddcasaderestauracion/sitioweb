@@ -78,7 +78,7 @@ body {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-padding-mobile);
-  height: 84px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,8 +106,41 @@ body {
   flex-shrink: 0;
 }
 
+.site-header__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.site-header__brand-text-small {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-base-soft);
+}
+
+.site-header__brand-text-large {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-base);
+}
+
+/* En pantallas angostas, el texto completo + el menú compiten por espacio.
+   Ocultamos la línea pequeña y dejamos solo el nombre principal. */
+@media (max-width: 480px) {
+  .site-header__brand-text-small {
+    display: none;
+  }
+  .site-header__brand-text-large {
+    font-size: var(--text-body);
+  }
+}
+
 .site-header__logo {
-  height: 60px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -196,7 +229,7 @@ body {
 
   .site-nav {
     position: absolute;
-    top: 84px;
+    top: 76px;
     left: 0;
     right: 0;
     background: var(--color-surface);
@@ -406,6 +439,23 @@ body {
   font-size: var(--text-body);
   color: var(--color-base-soft);
   margin: 0 0 var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   FOTO DE FONDO FIJA — compartida por todo el sitio, no solo el Home.
+   position:fixed la ancla al viewport completo, así se queda quieta
+   mientras el contenido de cada página se desliza por encima al hacer
+   scroll. Va como primer hijo de <body> en cada archivo HTML.
+   -------------------------------------------------------------------------- */
+.site-bg-photo {
+  position: fixed;
+  inset: 0;
+  background: url('assets/hero-bg.jpg') center 30% / cover no-repeat;
+  filter: blur(6px) contrast(1.05);
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------

@@ -73,7 +73,9 @@
   padding-block: var(--space-8);
   margin-inline: calc(-1 * var(--container-padding-mobile));
   padding-inline: var(--container-padding-mobile);
-  background: var(--color-surface-warm);
+  background: rgba(251, 246, 239, 0.75);
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {

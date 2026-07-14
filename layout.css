@@ -450,12 +450,17 @@ body {
 .site-bg-photo {
   position: fixed;
   inset: 0;
-  background: url('assets/hero-bg.jpg') center 30% / cover no-repeat;
-  filter: blur(6px) contrast(1.05);
+  background: url('assets/hero-bg-blurred.jpg') center 30% / cover no-repeat;
   opacity: 0.28;
   mix-blend-mode: multiply;
   z-index: 0;
   pointer-events: none;
+  /* Fuerza a Safari/iOS a crear una capa de composición propia.
+     Sin esto, combinar position:fixed + filter + mix-blend-mode
+     hace que Safari simplemente no dibuje el elemento (queda invisible). */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* --------------------------------------------------------------------------
